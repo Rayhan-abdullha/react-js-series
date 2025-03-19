@@ -50,4 +50,75 @@ const myFunc2 = (name = "rayhan") => {
 }
 // myFunc2()
 
-// Class
+// forEach, map, filter, reduce, find, every, some, findIndex, indexOf, lastIndexOf, includes, slice, splice, sort, reverse, split, join, concat, push, pop, shift, unshift, copyWithin, fill, entries, keys, values
+const arr8 = [1, 2, 3, 4, 3, 5]
+
+// forEach
+arr8.forEach((item) => {
+    if (item % 2 === 0) {
+        // console.log(item)
+    }
+})
+
+// map
+const arr9 = arr8.map((item) => item * 2)
+// console.log(arr9)
+
+// filter
+const arr10 = arr8.filter((item) => item % 2 !== 0)
+// console.log(arr10)
+
+// reduce
+const arr11 = arr8.reduce((acc, item) => {
+    acc.total += item
+    return acc
+}, { total: 0 })
+// console.log(arr11)
+
+// find
+const arr12 = arr8.find((item) => item === 3)
+// console.log(arr12)
+
+// every
+const arr13 = arr8.every((item) => item % 2 === 0)
+// console.log(arr13)
+
+// some
+const arr14 = arr8.some((item) => item % 2 === 0)
+// console.log(arr14)
+
+// findIndex
+const arr15 = arr8.findIndex((item) => item === 3)
+// console.log(arr15)
+
+// indexOf
+const arr16 = arr8.indexOf(3)
+// console.log(arr16)
+
+// lastIndexOf
+const arr17 = arr8.lastIndexOf(3)
+// console.log(arr17)
+
+// firstIndexOf
+const arr18 = arr8.lastIndexOf(3)
+// console.log(arr17)
+
+// includes
+const arr19 = arr8.includes(3)
+// console.log(arr19)
+
+// slice
+const arr20 = arr8.slice(1, 3)
+// console.log(arr20)
+
+// splice
+const arr21 = arr8.splice(0, 3, 10, 20, 30)
+console.log(arr21)
+
+
+
+
+
+
+
+// Set, Map, WeakSet, WeakMap
