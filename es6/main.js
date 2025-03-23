@@ -166,7 +166,7 @@ arr33.copyWithin(0, 2)
 // fill
 const arr34 = [1, 2, 3, 4, 5]
 arr34.fill(0, 2, 4)
-console.log(arr34)
+// console.log(arr34)
 
 // entries, keys, values
 const obj2 = {
@@ -180,6 +180,25 @@ const arr37 = Object.values(obj2)
 
 
 
+async function getUsr(url) {
+    if (!url) {
+        console.log("Please provide a url")
+        return
+    }
+    if (typeof url !== 'string') {
+        console.log('Please provide a valid url')
+        return
+    }
+    try {
+        const apiResponse = await fetch(url)
+        const data = await apiResponse.json()
+        console.log(data.slice(0,2))
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+getUsr("https://jsonplaceholder.typicode.com/users")
 
 
 
