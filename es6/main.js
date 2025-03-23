@@ -113,7 +113,71 @@ const arr20 = arr8.slice(1, 3)
 
 // splice
 const arr21 = arr8.splice(0, 3, 10, 20, 30)
-console.log(arr21)
+// console.log(arr21)
+
+// sort
+const arr22 = arr8.sort((a, b) => a - b)
+// console.log(arr22)
+
+// reverse
+const arr23 = arr8.reverse()
+// console.log(arr23)
+
+// split
+const str2 = "hello world"
+const arr24 = str2.split(" ")
+// console.log(arr24)
+
+// join
+const arr25 = ["hello", "world"]
+const str3 = arr25.join(" coder ")
+// console.log(str3)
+
+// concat   
+const arr26 = [1, 2, 3]
+const arr27 = [4, 5, 6]
+const arr28 = arr26.concat(arr27)
+// console.log(arr28)
+
+// push
+const arr29 = [1, 2, 3]
+arr29.push(4, 5, 6)
+// console.log(arr29)
+
+// pop
+const arr30 = [1, 2, 3]
+arr30.pop()
+// console.log(arr30)
+
+// shift
+const arr31 = [1, 2, 3]
+arr31.shift()
+// console.log(arr31)
+
+// unshift
+const arr32 = [1, 2, 3]
+arr32.unshift(4, 5, 6)
+// console.log(arr32)
+
+// copyWithin
+const arr33 = [1, 2, 3, 4, 5]
+arr33.copyWithin(0, 2)
+
+// fill
+const arr34 = [1, 2, 3, 4, 5]
+arr34.fill(0, 2, 4)
+console.log(arr34)
+
+// entries, keys, values
+const obj2 = {
+    name: "rayhan",
+    age: 27
+}
+const arr35 = Object.entries(obj2)
+const arr36 = Object.keys(obj2)
+const arr37 = Object.values(obj2)
+// console.log(arr35)
+
 
 
 
