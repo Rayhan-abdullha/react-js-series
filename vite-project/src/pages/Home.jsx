@@ -1,10 +1,12 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import OfferModal from '../components/modal/OfferModal'
+import UseMemoExample from '../components/useCallback-useMemo/example'
 
 const Home = () => {
   return (
       <div>
-          <h1>Home</h1>
+      {/* <OfferModal/> */}
+      <UseMemoExample/>
     </div>
   )
 }

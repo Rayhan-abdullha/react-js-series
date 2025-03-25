@@ -1,40 +1,16 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDataFetch } from "../hooks/useDataFetch";
 
 const Users = () => {
-  const [user, setUser] = useState([]);
-  const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
+  const {data: user, loading, error} = useDataFetch('https://jsonplaceholder.typicode.com/users', 10);
   const navigate = useNavigate()
-  
-  async function getUser() {
-    try {
-      setLoading(true)
-      const data = await fetch("https://jsonplaceholder.typicode.com/users")
-      const res = await data.json()
-      setUser(res)
-      if (error) {
-        setError(false)
-      }
-    } catch (err) {
-      console.log(err)
-      setError("something went to wrong")
-    } finally {
-      setLoading(false)
-    }
-  }
-
 
   if (loading) {
-    return <h1>Loading...</h1>
+    return <h1 className='text-2xl'>Loading...</h1>
   }
-
-
 
   return (
     <div>
-      <button onClick={getUser}>Get Users</button>
-      <button onClick={() => setUser([])}>Clear</button>
       <h1>Users: {user.length}</h1>
       {
         (user.length === 0 && !error) && <p style={{color: "red"}}>Empty User</p>

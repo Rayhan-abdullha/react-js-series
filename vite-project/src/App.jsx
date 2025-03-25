@@ -7,20 +7,22 @@ import UserDetails from './components/UserDetails';
 import NotFound from './components/NotFound';
 import MainLayout from './components/MainLayout';
 import UserLayout from './components/UserLayout';
-
+import CustomRoutes from './routes';
+import './App.css'
 const App = () => {
   return (
     <div>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
         </Route>
         <Route path='/users' element={<UserLayout />}>
           <Route index element={<Users/>} />
-          {/* <Route path="/:id" element={<UserDetails />} /> */}
+          <Route path=":id" element={<UserDetails />} />
         </Route>
         <Route path="*" element={<NotFound/>} />
-      </Routes>
+      </Routes> */}
+      <CustomRoutes/>
     </div>
   )
 }
