@@ -36,11 +36,21 @@ const Navbar = ({diraction = 'home'}) => {
                         <LINK to="/users">
                             Users
                         </LINK>
-                    </LI>
+                        </LI>
+                        <LI>
+                            <LINK to="/react-query">
+                            React Query
+                            </LINK>
+                        </LI>
                 </> : <>
                         <LI>
                             <LINK to="/users">
                             Users
+                            </LINK>
+                            </LI>
+                            <LI>
+                            <LINK to="/react-query">
+                            React Query
                             </LINK>
                         </LI>
                         <LI>

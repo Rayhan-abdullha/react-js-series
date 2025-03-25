@@ -5,6 +5,7 @@ import Users from "../components/Users";
 import Home from "../pages/Home";
 import MainLayout from "../components/MainLayout";
 import UserLayout from "../components/UserLayout";
+import ReactQuery from "../pages/ReactQuery";
 
 function CustomRoutes() {
     const element = useRoutes([
@@ -12,8 +13,13 @@ function CustomRoutes() {
             path: "/",
             element: <MainLayout />,
             children: [
-                { index: true, element: <Home /> },
-                { path: "*", element: <NotFound /> }
+                { index: true, element: <Home /> }
+            ]
+        }, {
+            path: "/react-query",
+            element: <MainLayout />,
+            children: [
+                { index: true, element: <ReactQuery /> }
             ]
         },
         {
@@ -24,7 +30,11 @@ function CustomRoutes() {
                 { path: ":id", element: <UserDetails /> },
                 { path: "*", element: <NotFound /> }
             ]
-        }
+        },
+        {
+            path: "*",
+            element: <NotFound />
+        },
     ])
     return element 
     
