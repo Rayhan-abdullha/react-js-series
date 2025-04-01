@@ -14,6 +14,11 @@ app.get('/health', async(req, res) => {
     res.status(201).json({message: "success", data: user});
 });
 
+app.get('/users', async (req, res) => {
+    const user = await User.find({})
+    res.status(201).json({ message: "success", data: user });
+});
+
 app.get('/blogs', async (req, res) => {
     const blog = await Blog.find({}).populate({
         path: 'author',
