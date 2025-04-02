@@ -18,10 +18,13 @@ const fetchPosts = new Promise((resolve, reject) => {
         ])
     }, 1000);
 })
-// fetchPosts.then(posts => console.log(posts));
+fetchPosts.then(posts => {
+    console.log(posts)
+});
 
 
 if (true) {
     var a = 10
 }
 console.log(a)
+console.log("loading...")

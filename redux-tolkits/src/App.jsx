@@ -10,7 +10,8 @@ const App = () => {
   }
   return (
     <div>
-      <h1>Counter: { count}</h1>
+      <h1>Counter: {count}</h1>
+      
       <button className='px-4 py-2 bg-slate-700 text-white cursor-pointer rounded-md' onClick={handleClick}>counter</button>
     </div>
   )
