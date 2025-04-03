@@ -1,4 +1,5 @@
 class Person {
+    static PI = 3.1416
     constructor(name, age) {
         this.name = name
         this._age = age
@@ -6,8 +7,13 @@ class Person {
     print() {
         console.log(this.name, this._age)
     }
+    static print() {
+        this.nam
+    }
+    
 }
-const person = new Person("rayhan", 27)
-console.log(person)
+const p1 = new Person("rayhan", 27)
 
-person.print()
+Person.print()
+console.log(Person.PI);
+
