@@ -10,6 +10,7 @@ import UserLayout from './components/UserLayout';
 import CustomRoutes from './routes';
 import './App.css'
 const App = () => {
+  console.log('hello world');
   return (
     <div>
       {/* <Routes>
