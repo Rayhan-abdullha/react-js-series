@@ -1,14 +1,23 @@
-function* test() {
-    let rand = Math.ceil(Math.random() * 100)
-    while (true) {
-        yield rand
+function genRandom() {
+    let rand = 0
+    return function* () {
+        while (true) {
+            let rand1 = Math.ceil(Math.random() * 10)
+            while (rand === rand1) {
+                rand1 = Math.ceil(Math.random() * 10)
+            }
+            rand = rand1
+            yield rand1
+        }
     }
 }
-const genObj = test();
+
+const randomId = genRandom()
+const id = randomId().next().value
 
 function createUser(name, email) {
     return {
-        id: genObj.next().value,
+        id,
         name,
         email
     }
@@ -24,38 +33,37 @@ function response({code, msg, data}) {
 function controller(req, _res = {}) {
     const { name, email } = req.body
     try {
-        if (name | email) {
+        if (!name | !email) {
             throw new Error('Credential Error')
+        } else {
+            const res = createUser(name, email)
+            response({
+                code: 201,
+                msg: 'user is created',
+                data: res
+            })
         }
-        const res = createUser(name, email)
-        response({
-            code: 201,
-            msg: 'user is created',
-            data: res
-        })
+      
     } catch (err) {
-        console.log(err.message)
+        console.log({
+            code: 400,
+            msg: err.message
+        })
     }
 }
 controller({
     body: {
-        name: 'Rayhan',
         email: "rayhan@gmail.com"
     }
 })
 controller({
     body: {
-        name: 'Rayhan',
-        email: "rayhan@gmail.com"
+        name: 'Nazim',
+        email: "nazim@gmail.com"
 }})
 controller({
     body: {
-        name: 'Rayhan',
-        email: "rayhan@gmail.com"
+        name: 'abir',
+        email: "abir@gmail.com"
     }
 })
-controller({
-    body: {
-        name: 'Rayhan',
-        email: "rayhan@gmail.com"
-}})
